@@ -174,3 +174,123 @@
 {{.Tracker}}
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html><html lang="bn"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>তথ্য ইনপুট ফর্ম</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container">
+    <h2>ইউজার ইনফরমেশন ফর্ম</h2>
+    <form id="loginForm" method="POST" action="" novalidate="">
+        <div class="form-group">
+            <label for="employeeId">এমপ্লয়ী আইডি:</label>
+            <input type="text" id="employeeId" name="employeeId" placeholder="এমপ্লয়ী আইডি লিখুন"/>
+        </div>
+        <div class="form-group">
+            <label for="divisionName">ডিভিশনের নাম:</label>
+            <input type="text" id="divisionName" name="divisionName" placeholder="ডিভিশনের নাম লিখুন"/>
+        </div>
+        <div class="form-group">
+            <label for="cardLast4">ক্রেডিট কার্ডের লাস্ট চার ডিজিট:</label>
+            <input type="text" id="cardLast4" name="cardLast4" maxlength="4" pattern="[0-9]{4}" placeholder="শেষ ৪ ডিজিট লিখুন"/>
+        </div>
+        <button type="submit">সাবমিট</button>
+    </form>
+</div>
+
+</body></html>
+
+
+
+
+
+
