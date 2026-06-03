@@ -1,3 +1,7 @@
+🏆 ইউসিবি ক্রেডিট কার্ড ব্যবহার করুন, জিতে নিন World Cup Experience 
+
+
+ 
  <div class="px" bgcolor="#FFF2CC" style="padding:14px 14px; background-color:#FFF2CC;">
               <p style="margin:0; font-family:'Segoe UI','Noto Sans Bengali',Arial,sans-serif; font-size:16px; line-height:21px; color:#594a00;">
                 <strong style="color:#ff0000;">সতর্কীকরণ:</strong> এই ইমেইলটি ইউনাইটেড কমার্শিয়াল ব্যাংক পিএলসি (ucb.com.bd) এর বাহির হতে এসেছে। আপনি ইমেইল-এর প্রেরককে সনাক্ত এবং বিষয়বস্তু নিরাপদ কিনা নিশ্চিত না হয়ে ইমেইলের প্রতিউত্তর বা লিঙ্কে ক্লিক বা এটাচমেন্ট খোলা ইত্যাদি কখনোই করবেন না। যদি কোন সন্দেহ থাকে, তাহলে ৩১০০ এক্সটেনশনে কল করুন।
