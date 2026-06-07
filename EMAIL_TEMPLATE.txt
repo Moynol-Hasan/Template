@@ -1,0 +1,801 @@
+Template Name: Foodi Welcome & First Order
+Display Name: Foodi
+Subject: Welcome to Foodi — Here's 25% off! 🥗
+Sender: onboard@foodii.com
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  Template Name: Foodi Welcome & First Order
+  Display Name: Foodi
+  Subject: Welcome to Foodi — Here's 20% off! 🥗
+-->
+<title>Welcome to Foodi</title>
+<style>
+  body,html { margin:0; padding:0; background:#f0f0f0; font-family:'Segoe UI',Helvetica,Arial,sans-serif; }
+  .wrap { padding:32px 16px; }
+  .card { max-width:580px; margin:0 auto; background:#FFFAFA; border-radius:4px; overflow:hidden; box-shadow:0 2px 16px rgba(0,0,0,.12); }
+
+  .hdr { background:#E10101; padding:18px 32px; display:flex; align-items:center; justify-content:space-between; }
+  .logo-text { font-size:24px; font-weight:900; color:#FFFAFA; letter-spacing:-1px; font-family:'Segoe UI',Helvetica,Arial,sans-serif; }
+  .logo-dot { color:#ffaaaa; }
+  .hdr-tag { font-size:11px; color:rgba(255,250,250,.6); letter-spacing:1px; text-transform:uppercase; }
+
+  .hero { background:#E10101; padding:0 32px 40px; text-align:center; position:relative; overflow:hidden; }
+  .hero::before { content:''; position:absolute; top:-50px; right:-70px; width:220px; height:220px; background:rgba(255,255,255,.07); border-radius:50%; pointer-events:none; }
+  .hero::after  { content:''; position:absolute; bottom:-70px; left:-50px; width:180px; height:180px; background:rgba(255,255,255,.05); border-radius:50%; pointer-events:none; }
+  .hero-rule { height:1px; background:rgba(255,255,255,.2); margin-bottom:32px; }
+  .hero-badge { display:inline-block; background:#FFFAFA; color:#E10101; font-size:11px; font-weight:800; padding:5px 18px; border-radius:20px; letter-spacing:1px; text-transform:uppercase; margin-bottom:18px; }
+  .hero h1 { font-size:30px; font-weight:800; color:#FFFAFA; margin:0 0 10px; line-height:1.25; }
+  .hero p { font-size:15px; color:rgba(255,250,250,.80); margin:0; }
+
+  .body { padding:32px; background:#FFFAFA; }
+  p { font-size:14px; color:#4a4a4a; line-height:1.75; margin:0 0 14px; }
+
+  .voucher { border:2px dashed #E10101; border-radius:6px; overflow:hidden; margin:24px 0; }
+  .voucher-top { background:#E10101; padding:22px 24px; text-align:center; }
+  .voucher-pct { font-size:60px; font-weight:900; color:#FFFAFA; line-height:1; }
+  .voucher-off { font-size:13px; font-weight:700; color:rgba(255,250,250,.8); text-transform:uppercase; letter-spacing:2.5px; margin-top:4px; }
+  .voucher-bottom { background:#FFFAFA; padding:20px 24px; text-align:center; }
+  .voucher-code-label { font-size:11px; color:#bbb; text-transform:uppercase; letter-spacing:1px; margin-bottom:9px; }
+  .voucher-code { font-size:22px; font-weight:900; letter-spacing:6px; color:#E10101; font-family:'Courier New',Courier,monospace; background:#fff5f5; border:1.5px solid #f5b0b0; padding:10px 24px; border-radius:4px; display:inline-block; }
+  .voucher-exp { font-size:12px; color:#bbb; margin-top:10px; }
+
+  .features { margin:24px 0; border:1px solid #f5e5e5; border-radius:6px; overflow:hidden; }
+  .feat { display:flex; align-items:flex-start; gap:16px; padding:16px 18px; border-bottom:1px solid #f5e5e5; background:#FFFAFA; }
+  .feat:last-child { border-bottom:none; }
+  .feat-icon-box { width:44px; height:44px; background:#fff0f0; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:21px; }
+  .feat-title { font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 3px; }
+  .feat-desc { font-size:13px; color:#888; margin:0; }
+
+  .btn { display:block; background:#E10101; color:#FFFAFA !important; text-decoration:none; padding:15px 24px; text-align:center; font-size:15px; font-weight:800; border-radius:5px; margin:24px 0 8px; letter-spacing:0.3px; }
+
+  .footer { padding:22px 32px; border-top:2px solid #f5e0e0; text-align:center; background:#FFFAFA; }
+  .footer-logo { font-size:17px; font-weight:900; color:#E10101; letter-spacing:-0.5px; margin-bottom:10px; }
+  .footer p { font-size:11px; color:#bbb; margin:4px 0; }
+  .footer a { color:#E10101; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+
+  <!-- HEADER -->
+  <div class="hdr">
+    <span class="logo-text">foodi<span class="logo-dot">.</span></span>
+    <span class="hdr-tag">Welcome Email</span>
+  </div>
+
+  <!-- HERO — typographic, no image -->
+  <div class="hero">
+    <div class="hero-rule"></div>
+    <div class="hero-badge">🎉 You're in!</div>
+    <h1>Welcome to Foodi,<br>{{.FirstName}}!</h1>
+    <p>Fresh meals. Fast delivery. Delivered with care.</p>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+    <p>We're thrilled to have you join Foodi! To celebrate your arrival, here's an exclusive welcome discount — just for signing up today.</p>
+
+    <div class="voucher">
+      <div class="voucher-top">
+        <div class="voucher-pct">25%</div>
+        <div class="voucher-off">Off Your First Order</div>
+      </div>
+      <div class="voucher-bottom">
+        <div class="voucher-code-label">Use this promo code at checkout</div>
+        <div class="voucher-code">FOODI20</div>
+        <div class="voucher-exp">Valid for 7 days &nbsp;·&nbsp; Min. order ৳250 &nbsp;·&nbsp; New users only</div>
+      </div>
+    </div>
+
+    <p><strong style="color:#1a1a1a;">Here's why thousands choose Foodi every day:</strong></p>
+
+    <div class="features">
+      <div class="feat">
+        <div class="feat-icon-box">🥦</div>
+        <div>
+          <p class="feat-title">Farm-Fresh Every Day</p>
+          <p class="feat-desc">Ingredients sourced daily from local farms across Bangladesh — no frozen shortcuts.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon-box">⚡</div>
+        <div>
+          <p class="feat-title">30-Minute Delivery</p>
+          <p class="feat-desc">Hot and fresh food at your door — or your next delivery is free.</p>
+        </div>
+      </div>
+      <div class="feat">
+        <div class="feat-icon-box">🍱</div>
+        <div>
+          <p class="feat-title">Fully Customizable Meals</p>
+          <p class="feat-desc">Choose your proteins, portions, and spice level — built exactly how you like it.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="{{.URL}}" class="btn">Browse the Menu &amp; Order Now →</a>
+    <p style="font-size:12px;color:#ccc;text-align:center;margin-top:4px;">Free delivery on your first order. No minimum required.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">foodi.</div>
+    <p>You received this because you signed up for a Foodi account.</p>
+    <p><a href="{{.URL}}">Unsubscribe</a> &nbsp;·&nbsp; <a href="{{.URL}}">Privacy Policy</a> &nbsp;·&nbsp; <a href="{{.URL}}">Help Center</a></p>
+    <p style="margin-top:8px;">Foodi Bangladesh Ltd. &nbsp;·&nbsp; Dhaka, Bangladesh</p>
+  </div>
+
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Template Name: FoodPanda Promo Code
+Display Name: Foodpanda
+Subject: 🎁 A gift for you: 30% off your next order
+Sender: sale@foodpadna.com
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  Template Name: FoodPanda Promo Code
+  Display Name: foodpanda
+  Subject: 🎁 A gift for you: 30% off your next order
+-->
+<title>foodpanda Promo Code</title>
+<style>
+  body,html{margin:0;padding:0;background:#f9f9f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;}
+  .wrap{padding:32px 16px;}
+  .card{max-width:560px;margin:0 auto;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);}
+  .hdr{background:#d70f64;padding:18px 28px;}
+  .hero{background:linear-gradient(135deg,#ff6ea0,#d70f64);padding:40px 28px;text-align:center;}
+  .gift-icon{font-size:64px;margin-bottom:12px;}
+  .hero h2{color:#fff;font-size:26px;font-weight:800;margin:0 0 8px;}
+  .hero p{color:rgba(255,255,255,.85);font-size:15px;margin:0;}
+  .body{padding:28px;}
+  p{font-size:14px;color:#555;line-height:1.6;margin:0 0 14px;}
+  .voucher{border:3px dashed #d70f64;border-radius:12px;padding:24px;text-align:center;margin:20px 0;background:#fff5f9;position:relative;}
+  .voucher::before{content:'';position:absolute;left:-16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:#f9f9f9;border-radius:50%;border:3px dashed #d70f64;border-left:none;border-top:none;border-bottom:none;}
+  .voucher::after{content:'';position:absolute;right:-16px;top:50%;transform:translateY(-50%);width:28px;height:28px;background:#f9f9f9;border-radius:50%;border:3px dashed #d70f64;border-right:none;border-top:none;border-bottom:none;}
+  .voucher-percent{font-size:60px;font-weight:900;color:#d70f64;line-height:1;}
+  .voucher-off{font-size:18px;font-weight:700;color:#d70f64;}
+  .voucher-code-label{font-size:11px;color:#999;text-transform:uppercase;letter-spacing:1px;margin:12px 0 6px;}
+  .voucher-code{font-size:22px;font-weight:900;letter-spacing:5px;color:#1a1a1a;font-family:monospace;background:#fff;border:2px solid #e0e0e0;padding:8px 20px;border-radius:6px;display:inline-block;}
+  .voucher-exp{font-size:12px;color:#aaa;margin-top:10px;}
+  .terms-list{background:#f9f9f9;border-radius:8px;padding:14px 18px;margin:16px 0;}
+  .terms-list p{font-size:12px;color:#888;margin:4px 0;}
+  .btn{display:block;background:#d70f64;color:#fff!important;text-decoration:none;padding:15px;text-align:center;font-size:16px;font-weight:800;border-radius:8px;margin:20px 0;}
+  .footer{padding:20px 28px;border-top:1px solid #f0f0f0;text-align:center;}
+  .footer p{font-size:11px;color:#aaa;margin:4px 0;}
+  .footer a{color:#d70f64;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+
+  <div class="hero">
+    <div class="gift-icon">🎁</div>
+    <h2>A little gift for you!</h2>
+    <p>We miss you — here's 30% off your next order</p>
+  </div>
+
+  <div class="body">
+    <p>Hi {{.FirstName}}! It's been a while. Here's a special voucher just for you — enjoy 30% off your next foodpanda order.</p>
+
+    <div class="voucher">
+      <div class="voucher-percent">30%</div>
+      <div class="voucher-off">OFF YOUR NEXT ORDER</div>
+      <div class="voucher-code-label">Your promo code</div>
+      <div class="voucher-code">PANDA30</div>
+      <div class="voucher-exp">Min. order ৳300</div>
+    </div>
+
+    <div class="terms-list">
+      <p>✓ Valid once per account</p>
+      <p>✓ Works on all restaurants in Dhaka</p>
+      <p>✓ Cannot be combined with other offers</p>
+      <p>✓ Applies to food total only (excl. delivery fee)</p>
+    </div>
+
+    <a href="{{.URL}}" class="btn">Order Now & Save 30% →</a>
+
+    <p style="font-size:12px;color:#aaa;text-align:center;">Craving something? Browse from 500+ restaurants near you.</p>
+  </div>
+
+  <div class="footer">
+    <p>You received this because you have a foodpanda account.</p>
+    <p><a href="{{.URL}}">Unsubscribe</a> · <a href="{{.URL}}">Privacy Policy</a> · <a href="{{.URL}}">Terms</a></p>
+    <p>foodpanda Bangladesh · Dhaka, Bangladesh</p>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+Template Name: Flash Sale
+Display Name: Daraz
+Subject: ⚡ 70% OFF ends tonight — Don't miss it!
+Sender: sale@daraaz.com
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daraz Flash Sale</title>
+<style>
+  body,html{margin:0;padding:0;background:#f5f5f5;font-family:Arial,sans-serif;}
+  .wrap{padding:24px 16px;}
+  .card{max-width:560px;margin:0 auto;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+  .hdr{background:#f85606;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .hero{background:linear-gradient(135deg,#f85606 0%,#ff3b00 100%);padding:36px 24px;text-align:center;}
+  .hero-badge{display:inline-block;background:#ffcc00;color:#333;font-size:11px;font-weight:900;padding:4px 12px;border-radius:2px;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;}
+  .hero h1{font-size:52px;font-weight:900;color:#fff;margin:0;line-height:1;}
+  .hero h1 span{font-size:22px;vertical-align:super;}
+  .hero p{color:rgba(255,255,255,.9);font-size:15px;margin:8px 0 0;}
+  .countdown{background:#111;color:#fff;padding:16px 24px;text-align:center;}
+  .countdown-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:#888;margin-bottom:8px;}
+  .countdown-boxes{display:flex;justify-content:center;gap:12px;}
+  .cbox{text-align:center;}
+  .cbox-num{background:#f85606;color:#fff;font-size:26px;font-weight:900;width:56px;height:56px;display:flex;align-items:center;justify-content:center;border-radius:4px;font-family:monospace;}
+  .cbox-label{font-size:10px;color:#888;margin-top:4px;text-transform:uppercase;}
+  .cbox-sep{font-size:26px;font-weight:900;color:#f85606;line-height:56px;}
+  .body{padding:24px;}
+  .section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#f85606;margin-bottom:16px;}
+  .products{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+  .product{border:1px solid #e8e8e8;border-radius:4px;overflow:hidden;}
+  .prod-img{background:#f5f5f5;height:100px;display:flex;align-items:center;justify-content:center;font-size:40px;}
+  .prod-body{padding:10px;}
+  .prod-name{font-size:12px;font-weight:600;color:#333;margin-bottom:4px;}
+  .prod-prices{display:flex;gap:6px;align-items:center;}
+  .prod-new{font-size:14px;font-weight:700;color:#f85606;}
+  .prod-old{font-size:11px;color:#aaa;text-decoration:line-through;}
+  .prod-disc{background:#f85606;color:#fff;font-size:10px;font-weight:700;padding:2px 5px;border-radius:2px;margin-left:auto;}
+  .btn{display:block;background:#f85606;color:#fff!important;text-decoration:none;padding:14px 24px;text-align:center;font-size:15px;font-weight:700;border-radius:4px;margin:8px 0;}
+  .footer{padding:16px 24px;border-top:1px solid #e8e8e8;text-align:center;}
+  .footer p{font-size:11px;color:#aaa;margin:4px 0;}
+  .footer a{color:#f85606;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+  <div class="hdr">
+    <svg width="80" height="28" viewBox="0 0 120 40" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="30" font-family="Arial" font-size="28" font-weight="900" fill="#ffffff">daraz</text>
+    </svg>
+    <span style="color:#fff;font-size:12px;">⚡ Flash Sale</span>
+  </div>
+
+  <div class="hero">
+    <div class="hero-badge">⚡ Flash Sale — Today Only</div>
+    <h1><span>UP TO</span> 70<span>%</span></h1>
+    <h1 style="font-size:30px;margin-top:4px;">OFF</h1>
+    <p>Massive discounts on electronics, fashion, home & more</p>
+  </div>
+
+  <div class="body">
+    <div class="section-title">🔥 Top Deals Just For You</div>
+    <div class="products">
+      <div class="product">
+        <div class="prod-img">💻</div>
+        <div class="prod-body">
+          <div class="prod-name">Laptop Stand Adjustable</div>
+          <div class="prod-prices"><span class="prod-new">৳899</span><span class="prod-old">৳2,500</span><span class="prod-disc">64%</span></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="prod-img">⌚</div>
+        <div class="prod-body">
+          <div class="prod-name">Smart Watch Pro X2</div>
+          <div class="prod-prices"><span class="prod-new">৳3,199</span><span class="prod-old">৳8,999</span><span class="prod-disc">64%</span></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="prod-img">👟</div>
+        <div class="prod-body">
+          <div class="prod-name">Sport Sneakers — Unisex</div>
+          <div class="prod-prices"><span class="prod-new">৳1,200</span><span class="prod-old">৳3,500</span><span class="prod-disc">65%</span></div>
+        </div>
+      </div>
+      <div class="product">
+        <div class="prod-img">🎮</div>
+        <div class="prod-body">
+          <div class="prod-name">Wireless Game Controller</div>
+          <div class="prod-prices"><span class="prod-new">৳2,499</span><span class="prod-old">৳6,000</span><span class="prod-disc">58%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <a href="{{.URL}}" class="btn">Shop All Flash Deals →</a>
+
+    <p style="font-size:12px;color:#999;text-align:center;margin-top:8px;">Free shipping on orders above ৳500 · Use code: <strong style="color:#f85606;">FLASH70</strong></p>
+  </div>
+
+  <div class="footer">
+    <p>You're receiving this because you subscribed to Daraz promotions.</p>
+    <p><a href="{{.URL}}">Unsubscribe</a> · <a href="{{.URL}}">Privacy Policy</a> · <a href="{{.URL}}">Help</a></p>
+    <p>Daraz Bangladesh Ltd. · Dhaka, Bangladesh</p>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+Template Name: Security Alert
+Display Name: Google
+Subject: New sign-in to your Google Account
+Sender: account@goolge.com
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>New sign-in to your Google Account</title>
+<style type="text/css">
+  body, html { margin:0; padding:0; background:#f8f9fa; font-family: 'Google Sans', Roboto, Arial, sans-serif; }
+  .email-wrapper { background:#f8f9fa; padding:32px 16px; }
+  .email-card { background:#ffffff; border-radius:8px; max-width:560px; margin:0 auto; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,0.12); }
+  .header { padding:24px 32px; border-bottom:1px solid #e8eaed; display:flex; align-items:center; gap:12px; }
+  .body { padding:32px; }
+  h2 { font-size:22px; font-weight:400; color:#202124; margin:0 0 16px; }
+  p { font-size:14px; color:#5f6368; line-height:1.6; margin:0 0 16px; }
+  .info-box { background:#f8f9fa; border-radius:8px; padding:16px 20px; margin:20px 0; }
+  .info-row { display:flex; gap:12px; margin-bottom:8px; font-size:13px; }
+  .info-row:last-child { margin-bottom:0; }
+  .info-label { color:#80868b; min-width:90px; }
+  .info-value { color:#202124; font-weight:500; }
+  .btn { display:inline-block; background:#1a73e8; color:#ffffff !important; text-decoration:none; padding:10px 24px; border-radius:4px; font-size:14px; font-weight:500; margin:8px 4px 8px 0; }
+  .btn-outline { background:#fff; color:#1a73e8 !important; border:1px solid #dadce0; }
+  .alert-strip { background:#fce8e6; border-left:4px solid #d93025; border-radius:0 4px 4px 0; padding:12px 16px; margin:20px 0; }
+  .alert-strip p { color:#d93025; margin:0; font-size:13px; font-weight:500; }
+  .footer { padding:24px 32px; border-top:1px solid #e8eaed; text-align:center; }
+  .footer p { font-size:12px; color:#80868b; margin:4px 0; }
+  .footer a { color:#1a73e8; text-decoration:none; }
+</style>
+</head>
+<body>
+<div class="email-wrapper">
+  <div class="email-card">
+
+    <div class="header">
+      <svg width="74" height="24" viewBox="0 0 272 92" xmlns="http://www.w3.org/2000/svg">
+        <path d="M115.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18C71.25 34.32 81.24 25 93.5 25s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44S80.99 39.2 80.99 47.18c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#EA4335"/>
+        <path d="M163.75 47.18c0 12.77-9.99 22.18-22.25 22.18s-22.25-9.41-22.25-22.18c0-12.85 9.99-22.18 22.25-22.18s22.25 9.32 22.25 22.18zm-9.74 0c0-7.98-5.79-13.44-12.51-13.44s-12.51 5.46-12.51 13.44c0 7.9 5.79 13.44 12.51 13.44s12.51-5.55 12.51-13.44z" fill="#FBBC05"/>
+        <path d="M209.75 26.34v39.82c0 16.38-9.66 23.07-21.08 23.07-10.75 0-17.22-7.19-19.66-13.07l8.48-3.53c1.51 3.61 5.21 7.87 11.17 7.87 7.31 0 11.84-4.51 11.84-13v-3.19h-.34c-2.18 2.69-6.38 5.04-11.68 5.04-11.09 0-21.25-9.66-21.25-22.09 0-12.52 10.16-22.26 21.25-22.26 5.29 0 9.49 2.35 11.68 4.96h.34v-3.61h9.25zm-8.56 20.92c0-7.81-5.21-13.52-11.84-13.52-6.72 0-12.35 5.71-12.35 13.52 0 7.73 5.63 13.36 12.35 13.36 6.63 0 11.84-5.63 11.84-13.36z" fill="#4285F4"/>
+        <path d="M225 3v65h-9.5V3h9.5z" fill="#34A853"/>
+        <path d="M262.02 54.48l7.56 5.04c-2.44 3.61-8.32 9.83-18.48 9.83-12.6 0-22.01-9.74-22.01-22.18 0-13.19 9.49-22.18 20.92-22.18 11.51 0 17.14 9.16 18.98 14.11l1.01 2.52-29.65 12.28c2.27 4.45 5.8 6.72 10.75 6.72 4.96 0 8.4-2.44 10.92-6.14zm-23.27-7.98l19.82-8.23c-1.09-2.77-4.37-4.7-8.23-4.7-4.95 0-11.84 4.37-11.59 12.93z" fill="#EA4335"/>
+        <path d="M35.29 41.41V32H67c.31 1.64.47 3.58.47 5.68 0 7.06-1.93 15.79-8.15 22.01-6.05 6.3-13.78 9.66-24.02 9.66C16.32 69.35.36 53.89.36 34.91.36 15.93 16.32.47 35.3.47c10.5 0 17.98 4.12 23.6 9.49l-6.64 6.64c-4.03-3.78-9.49-6.72-16.97-6.72-13.86 0-24.7 11.17-24.7 25.03 0 13.86 10.84 25.03 24.7 25.03 8.99 0 14.11-3.61 17.39-6.89 2.66-2.66 4.41-6.46 5.1-11.65l-22.49.01z" fill="#4285F4"/>
+      </svg>
+      <span style="font-size:13px; color:#80868b; margin-left:auto;">Security Alert</span>
+    </div>
+
+    <div class="body">
+      <h2>New sign-in to your Google Account</h2>
+      <p>Hi {{.FirstName}},</p>
+      <p>Your Google Account <strong>{{.Email}}</strong> was just used to sign in from a new device. If this was you, you don't need to do anything.</p>
+
+      <div class="info-box">
+        <div class="info-row"><span class="info-label">Device</span><span class="info-value">Chrome on Windows 11</span></div>
+        <div class="info-row"><span class="info-label">Location</span><span class="info-value">Dhaka, Bangladesh</span></div>
+        <div class="info-row"><span class="info-label">Time</span><span class="info-value">Wednesday, April 29, 2026 at 10:42 AM BST</span></div>
+        <div class="info-row"><span class="info-label">IP Address</span><span class="info-value">103.7.xx.xx (approximate)</span></div>
+      </div>
+
+      <div class="alert-strip">
+        <p>If you didn't sign in, your account may be compromised. Secure it now.</p>
+      </div>
+
+      <a href="{{.URL}}" class="btn">Check activity</a>
+      <a href="{{.URL}}" class="btn btn-outline">Secure account</a>
+    </div>
+
+    <div class="footer">
+      <p>Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043</p>
+      <p>© 2026 Google LLC. All rights reserved.</p>
+      <p><a href="{{.URL}}">Privacy Policy</a> · <a href="{{.URL}}">Terms of Service</a> · <a href="{{.URL}}">Account Help</a></p>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+Template Name: Account Verification
+Display Name: Microsoft
+Subject: Verify your Microsoft account email
+Sender: account@mircosoft.com
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify your Microsoft account</title>
+<style>
+  body,html{margin:0;padding:0;background:#f3f2f1;font-family:'Segoe UI',Tahoma,Arial,sans-serif;}
+  .wrap{padding:32px 16px;}
+  .card{max-width:560px;margin:0 auto;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.1);}
+  .top-bar{height:4px;background:#0078d4;}
+  .hdr{padding:24px 32px;background:#0078d4;text-align:left;}
+  .body{padding:36px 32px;}
+  h2{font-size:22px;font-weight:600;color:#201f1e;margin:0 0 8px;}
+  p{font-size:14px;color:#605e5c;line-height:1.6;margin:0 0 16px;}
+  .otp-box{background:#f3f2f1;border:1px solid #d2d0ce;border-radius:2px;padding:20px;text-align:center;margin:24px 0;}
+  .otp-code{font-size:36px;font-weight:700;letter-spacing:12px;color:#0078d4;font-family:monospace;}
+  .otp-label{font-size:12px;color:#a19f9d;margin-top:8px;}
+  .expires{background:#fff4ce;border-left:3px solid #ffb900;padding:10px 14px;margin:16px 0;font-size:13px;color:#323130;}
+  .btn{display:inline-block;background:#0078d4;color:#fff!important;text-decoration:none;padding:11px 24px;font-size:14px;font-weight:600;margin:16px 0;}
+  .divider{border:none;border-top:1px solid #edebe9;margin:24px 0;}
+  .footer{padding:20px 32px;background:#f3f2f1;text-align:center;}
+  .footer p{font-size:11px;color:#a19f9d;margin:4px 0;}
+  .footer a{color:#0078d4;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+  <div class="top-bar"></div>
+  <div class="hdr">
+    <!-- Microsoft SVG Logo -->
+    <svg width="108" height="24" viewBox="0 0 108 24" xmlns="http://www.w3.org/2000/svg">
+      <rect x="0" y="0" width="11" height="11" fill="#F25022"/>
+      <rect x="12.5" y="0" width="11" height="11" fill="#7FBA00"/>
+      <rect x="0" y="12.5" width="11" height="11" fill="#00A4EF"/>
+      <rect x="12.5" y="12.5" width="11" height="11" fill="#FFB900"/>
+      <text x="30" y="17" font-family="Segoe UI,Arial" font-size="15" font-weight="600" fill="#ffffff">Microsoft</text>
+    </svg>
+  </div>
+  <div class="body">
+    <h2>Verify your email address</h2>
+    <p>Hi {{.FirstName}},</p>
+    <p>To complete your Microsoft account setup, please verify your email address by clicking the button below.</p>
+
+    <a href="{{.URL}}" class="btn">Verify email address</a>
+
+    <hr class="divider">
+
+    <p style="font-size:13px;">If you didn't request this email, you can safely ignore it. Someone may have typed your email address by mistake.</p>
+    <p style="font-size:13px;">For help, visit <a href="{{.URL}}" style="color:#0078d4;">account.microsoft.com/support</a></p>
+  </div>
+  <div class="footer">
+    <p>Microsoft Corporation · One Microsoft Way · Redmond, WA 98052</p>
+    <p><a href="{{.URL}}">Privacy Statement</a> · <a href="{{.URL}}">Terms of Use</a></p>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+Template Name: Password Reset
+Display Name: Facebook
+Subject: Reset your Facebook password
+Sender: Faecebook@gmail.com
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  Template Name: Facebook Password Reset
+  Display Name: Facebook
+  Subject: Reset your Facebook password
+-->
+<title>Reset your Facebook password</title>
+<style>
+  body,html{margin:0;padding:0;background:#f0f2f5;font-family:Helvetica,Arial,sans-serif;}
+  .wrap{padding:32px 16px;}
+  .card{max-width:560px;margin:0 auto;background:#fff;border:1px solid #dddfe2;border-radius:8px;overflow:hidden;}
+  .hdr{background:#1877f2;padding:24px 32px;text-align:center;}
+  .body{padding:32px;}
+  h2{font-size:20px;font-weight:700;color:#1c1e21;margin:0 0 12px;}
+  p{font-size:14px;color:#606770;line-height:1.6;margin:0 0 16px;}
+  .reset-btn{display:block;background:#1877f2;color:#fff!important;text-decoration:none;padding:14px 24px;border-radius:6px;font-size:16px;font-weight:700;text-align:center;margin:20px 0;}
+  .code-box{background:#f0f2f5;border-radius:8px;padding:16px 24px;text-align:center;margin:16px 0;}
+  .code{font-size:28px;font-weight:700;letter-spacing:8px;color:#1877f2;font-family:monospace;}
+  .code-label{font-size:12px;color:#90949c;margin-top:6px;}
+  .warn{border:1px solid #f5c518;background:#fffbea;border-radius:6px;padding:12px 16px;margin:20px 0;font-size:13px;color:#1c1e21;}
+  .divider{border:none;border-top:1px solid #dddfe2;margin:24px 0;}
+  .footer{padding:20px 32px;background:#f0f2f5;text-align:center;}
+  .footer p{font-size:11px;color:#90949c;margin:4px 0;}
+  .footer a{color:#1877f2;text-decoration:none;}
+  .fb-links{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:12px 0;}
+  .fb-links a{font-size:12px;color:#1877f2;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+  <div class="hdr">
+    <!-- Facebook "f" logo SVG -->
+    <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="20" fill="#ffffff"/>
+      <path d="M22.5 20h3l.5-3.5h-3.5v-2c0-1 .5-2 2-2H26v-3s-1.5-.5-3-.5c-3 0-5 1.8-5 5v2.5h-3V20h3v10h3.5V20z" fill="#1877f2"/>
+    </svg>
+    <div style="color:#fff;font-size:20px;font-weight:700;margin-top:8px;">facebook</div>
+  </div>
+
+  <div class="body">
+    <h2>Reset your password</h2>
+    <p>Hi {{.FirstName}},</p>
+    <p>We received a request to reset the password for your Facebook account associated with <strong>{{.Email}}</strong>.</p>
+    <p>Click the button below to reset your password:</p>
+
+    <a href="{{.URL}}" class="reset-btn">Reset password</a>
+
+    <div class="warn">
+      🔒 <strong>Didn't request a password reset?</strong> Ignore this email — your password won't change unless you click the link above.
+    </div>
+
+    <hr class="divider">
+
+    <p style="font-size:13px;">For your security, this link will expire in <strong>1 hour</strong>.</p>
+  </div>
+
+  <div class="footer">
+    <div class="fb-links">
+      <a href="#">Help Center</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms</a>
+      <a href="#">Cookies</a>
+    </div>
+    <p>Facebook, Inc. · 1 Hacker Way · Menlo Park, CA 94025</p>
+    <p>This message was sent to {{.Email}}</p>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+Template Name: Order Confirmed
+Display Name: Daraz
+Subject: 🎉 Your order #DRZ-884521 is confirmed!
+Sender: order@daraaz.com
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+  Template Name: Daraz Order Confirmed
+  Display Name: Daraz
+  Subject: 🎉 Your order #DRZ-884521 is confirmed!
+-->
+<title>Daraz Order Confirmed</title>
+<style>
+  body,html{margin:0;padding:0;background:#f5f5f5;font-family:Arial,sans-serif;}
+  .wrap{padding:24px 16px;}
+  .card{max-width:560px;margin:0 auto;background:#fff;border-radius:4px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.1);}
+  .hdr{background:#f85606;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;}
+  .hdr-right{color:#fff;font-size:12px;text-align:right;}
+  .success-band{background:#f85606;padding:20px 24px;text-align:center;}
+  .success-band h2{color:#fff;font-size:20px;margin:0;font-weight:700;}
+  .success-band p{color:rgba(255,255,255,.9);font-size:13px;margin:6px 0 0;}
+  .body{padding:24px;}
+  .order-box{border:1px solid #e8e8e8;border-radius:4px;overflow:hidden;margin:16px 0;}
+  .order-header{background:#fff8f5;padding:12px 16px;border-bottom:1px solid #e8e8e8;display:flex;justify-content:space-between;align-items:center;}
+  .order-number{font-size:13px;font-weight:700;color:#f85606;}
+  .order-date{font-size:12px;color:#999;}
+  .item-row{padding:14px 16px;display:flex;gap:14px;align-items:flex-start;border-bottom:1px solid #f5f5f5;}
+  .item-img{width:56px;height:56px;background:#f5f5f5;border-radius:4px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:24px;}
+  .item-name{font-size:13px;font-weight:600;color:#333;margin-bottom:4px;}
+  .item-meta{font-size:12px;color:#999;}
+  .item-price{margin-left:auto;font-size:14px;font-weight:700;color:#f85606;white-space:nowrap;}
+  .summary{padding:14px 16px;}
+  .summary-row{display:flex;justify-content:space-between;font-size:13px;padding:4px 0;}
+  .summary-row.total{font-weight:700;font-size:15px;color:#333;border-top:1px solid #e8e8e8;margin-top:8px;padding-top:10px;}
+  .summary-row .label{color:#666;}
+  .tracking-strip{background:#fff8f5;border:1px solid #ffdcc8;border-radius:4px;padding:14px 16px;margin:16px 0;}
+  .tracking-strip h4{font-size:13px;font-weight:700;color:#f85606;margin:0 0 8px;}
+  .track-steps{display:flex;gap:0;justify-content:space-between;position:relative;}
+  .track-step{text-align:center;flex:1;position:relative;}
+  .track-step::before{content:'';position:absolute;top:10px;left:50%;right:-50%;height:2px;background:#e8e8e8;z-index:0;}
+  .track-step:last-child::before{display:none;}
+  .step-dot{width:20px;height:20px;border-radius:50%;background:#e8e8e8;margin:0 auto 6px;z-index:1;position:relative;display:flex;align-items:center;justify-content:center;font-size:10px;}
+  .step-dot.done{background:#27ae60;color:#fff;}
+  .step-dot.active{background:#f85606;color:#fff;}
+  .step-label{font-size:10px;color:#999;}
+  .step-label.done{color:#27ae60;}
+  .step-label.active{color:#f85606;font-weight:700;}
+  .btn{display:block;background:#f85606;color:#fff!important;text-decoration:none;padding:13px 24px;text-align:center;font-size:14px;font-weight:700;border-radius:4px;margin:16px 0;}
+  .footer{padding:16px 24px;border-top:1px solid #e8e8e8;text-align:center;}
+  .footer p{font-size:11px;color:#aaa;margin:4px 0;}
+  .footer a{color:#f85606;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="card">
+
+  <div class="success-band">
+    <h2>✓ Order Confirmed!</h2>
+    <p>Thank you for shopping with Daraz, {{.FirstName}}!</p>
+  </div>
+
+  <div class="body">
+    <div class="order-box">
+      <div class="order-header">
+        <span class="order-number">Order #DRZ-884521</span>
+        <!-- <span class="order-date">29 Apr 2026, 11:30 AM</span> -->
+      </div>
+      <div class="item-row">
+        <div class="item-img">📱</div>
+        <div>
+          <div class="item-name">Samsung Galaxy A55 5G — Midnight Blue</div>
+          <div class="item-meta">Qty: 1 · Sold by: Samsung Official Store</div>
+        </div>
+        <div class="item-price">৳38,999</div>
+      </div>
+      <div class="item-row">
+        <div class="item-img">🎧</div>
+        <div>
+          <div class="item-name">JBL Tune 520BT Wireless Headphones</div>
+          <div class="item-meta">Qty: 1 · Sold by: JBL Bangladesh</div>
+        </div>
+        <div class="item-price">৳4,299</div>
+      </div>
+      <div class="summary">
+        <div class="summary-row"><span class="label">Subtotal</span><span>৳43,298</span></div>
+        <div class="summary-row"><span class="label">Shipping</span><span style="color:#27ae60;">FREE</span></div>
+        <div class="summary-row"><span class="label">Voucher (DRMAY20)</span><span style="color:#27ae60;">-৳500</span></div>
+        <div class="summary-row total"><span>Total</span><span style="color:#f85606;">৳42,798</span></div>
+      </div>
+    </div>
+
+    <div class="tracking-strip">
+      <h4>📦 Track your order</h4>
+      <div class="track-steps">
+        <div class="track-step"><div class="step-dot done">✓</div><div class="step-label done">Confirmed</div></div>
+        <div class="track-step"><div class="step-dot active">→</div><div class="step-label active">Processing</div></div>
+        <div class="track-step"><div class="step-dot">📦</div><div class="step-label">Shipped</div></div>
+        <div class="track-step"><div class="step-dot">🏠</div><div class="step-label">Delivered</div></div>
+      </div>
+    </div>
+
+    <a href="{{.URL}}" class="btn">Track Order</a>
+  </div>
+
+  <div class="footer">
+    <p>Need help? <a href="#">Contact Daraz Support</a></p>
+    <p>Daraz Bangladesh Ltd. · Dhaka, Bangladesh</p>
+    <p><a href="#">Privacy Policy</a> · <a href="#">Terms & Conditions</a> · <a href="#">Unsubscribe</a></p>
+  </div>
+</div>
+</div>
+</body>
+</html>
+
