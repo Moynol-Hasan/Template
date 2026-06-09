@@ -1,0 +1,21 @@
+Question,Type,Option A,Option B,Option C,Option D,Correct Answer,Description
+What is malware?,SINGLE_SELECTION,A security tool,A harmful program,A firewall,A network device,A harmful program,Malware is any software designed to harm systems.
+What is the main purpose of most malware?,SINGLE_SELECTION,Improve performance,Make money illegally,Test systems,Provide updates,Make money illegally,Most malware is financially motivated.
+What is a virus in cybersecurity?,SINGLE_SELECTION,A standalone program,A program needing a host,A firewall,A password,A program needing a host,Viruses require a host program to activate.
+What makes a worm different from a virus?,SINGLE_SELECTION,Needs user action,Spreads automatically,Requires password,Needs antivirus,Spreads automatically,Worms spread without user interaction.
+What is a Trojan?,SINGLE_SELECTION,A visible virus,A disguised malicious program,A firewall tool,A password manager,A disguised malicious program,Trojans appear safe but are harmful.
+What does spyware do?,SINGLE_SELECTION,Delete files,Improve speed,Monitor user activity,Protect system,Monitor user activity,Spyware secretly collects user data.
+What is ransomware?,SINGLE_SELECTION,Data backup tool,File organizer,Digital extortion malware,Antivirus,Digital extortion malware,Ransomware locks files and demands payment.
+What is smishing?,SINGLE_SELECTION,Email phishing,Text message phishing,Voice phishing,QR phishing,Text message phishing,Smishing uses SMS to scam users.
+What is vishing?,SINGLE_SELECTION,Text phishing,Voice call phishing,Email phishing,QR phishing,Voice call phishing,Vishing involves phone calls.
+What is quishing?,SINGLE_SELECTION,Email phishing,QR code phishing,Voice phishing,SMS phishing,QR code phishing,Quishing uses QR codes to trick users.
+Why are mobile phishing attacks harder to detect?,SINGLE_SELECTION,Too slow,Too obvious,Exploit trusted channels,Require passwords,Exploit trusted channels,They use trusted platforms like SMS.
+Which type of malware spreads automatically without needing user action?,SINGLE_SELECTION,Virus,Worm,Trojan,Spyware,Worm,Worms spread across networks without user interaction.
+What is social engineering?,SINGLE_SELECTION,Hardware attack,Tricking people to give info,Software update,Firewall breach,Tricking people to give info,It manipulates users to reveal data.
+Who are now common targets of data breaches?,MULTI_SELECTION,Small businesses,Large companies,Individuals,Vendors,"Small businesses,Large companies,Vendors",Breaches affect many types of organizations.
+What is a common entry point for data breaches?,SINGLE_SELECTION,Antivirus,Phishing,Firewall,Backup systems,Phishing,Phishing is a major attack method.
+What is a supply chain attack?,SINGLE_SELECTION,Attack on delivery systems,Attack via trusted vendors,Attack on hardware,Attack on emails,Attack via trusted vendors,It spreads through connected organizations.
+What is happening to the speed of cyber attacks?,SINGLE_SELECTION,Slowing down,Staying same,Getting faster,Stopping,Getting faster,Attacks now happen within hours.
+What do attackers often do before ransomware payment demand?,SINGLE_SELECTION,Delete data,Backup data,Steal data first,Encrypt only,Steal data first,Data is often stolen before encryption.
+What is a key modern security strategy?,SINGLE_SELECTION,Ignore threats,Data-centric security,Delete systems,Disable internet,Data-centric security,Focus on protecting valuable data.
+Why should organizations assume breaches will happen?,SINGLE_SELECTION,To save time,Because breaches are inevitable,To avoid updates,To reduce cost,Because breaches are inevitable,Security must prepare for inevitable breaches.
