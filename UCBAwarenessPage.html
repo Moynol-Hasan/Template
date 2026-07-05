@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ফিশিং সচেতনতা</title>
+  <style>
+    :root {
+      --black: #000000;
+      --zinc-950: #09090b;
+      --zinc-900: #18181b;
+      --gray-800: #1f2937;
+      --gray-500: #6b7280;
+      --gray-400: #9ca3af;
+      --gray-300: #d1d5db;
+      --gray-200: #e5e7eb;
+      --red-950: #450a0a;
+      --red-700: #b91c1c;
+      --red-600: #dc2626;
+      --red-500: #ef4444;
+      --red-400: #f87171;
+      --green-500: #22c55e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--black);
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .page { min-height: 100vh; background: var(--black); color: #fff; }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      position: relative;
+      text-align: center;
+      padding: 40px 16px;
+      border-bottom: 1px solid var(--gray-800);
+      background: linear-gradient(to bottom right, var(--red-950), var(--black), var(--black));
+      overflow: hidden;
+    }
+    .hero__glow {
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at top, rgba(127, 29, 29, 0.2), transparent 60%);
+      pointer-events: none;
+    }
+    .hero__inner { position: relative; }
+    .hero__logo {
+      display: block;
+      height: 44px;
+      width: auto;
+      margin: 0 auto 24px;
+    }
+    .hero__badge-icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 64px; height: 64px; border-radius: 9999px;
+      background: rgba(127, 29, 29, 0.4);
+      border: 1px solid var(--red-700);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 24px; font-weight: 700; line-height: 1.3;
+    }
+    .hero h1 .accent { color: var(--red-500); }
+    .hero__sub {
+      color: var(--gray-400); margin: 12px auto 0; max-width: 36rem; font-size: 14px;
+    }
+    .hero__pill {
+      margin-top: 20px;
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid rgba(220, 38, 38, 0.6);
+      background: rgba(69, 10, 10, 0.4);
+      color: var(--red-400);
+      border-radius: 9999px;
+      font-size: 14px; font-weight: 500;
+    }
+
+    /* ---------- MAIN ---------- */
+    .main {
+      max-width: 64rem; margin: 0 auto; padding: 32px 16px;
+      display: flex; flex-direction: column; gap: 40px;
+    }
+
+    /* VIDEO */
+    .section-title { font-size: 16px; font-weight: 600; margin-bottom: 12px; color: var(--gray-200); }
+    .video-wrap {
+      aspect-ratio: 16 / 9; width: 100%; border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--gray-800); background: var(--zinc-950);
+    }
+    .video-wrap video { width: 100%; height: 100%; object-fit: cover; }
+
+    /* CARDS GRID */
+    .cards { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .card {
+      background: var(--zinc-900); border: 1px solid var(--gray-800);
+      border-radius: 12px; padding: 20px;
+    }
+    .card h3 {
+      font-weight: 600; font-size: 16px; margin-bottom: 16px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .icon { width: 20px; height: 20px; flex-shrink: 0; }
+    .icon--green { color: var(--green-500); }
+    .icon--red { color: var(--red-500); }
+
+    .steps, .flags { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .steps li { display: flex; align-items: flex-start; gap: 12px; }
+    .flags li { display: flex; align-items: center; gap: 12px; }
+    .steps .num, .flags .num {
+      margin-top: 2px; width: 20px; height: 20px; flex-shrink: 0; border-radius: 9999px;
+      background: var(--red-600); color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+    }
+    .steps .text, .flags .text { font-size: 14px; color: var(--gray-300); }
+
+    /* ---------- COURSE CTA ---------- */
+    .cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      background: linear-gradient(135deg, rgba(69, 10, 10, 0.55), var(--zinc-900));
+      border: 1px solid rgba(220, 38, 38, 0.5);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .cta__icon {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 56px; height: 56px; border-radius: 9999px;
+      background: rgba(127, 29, 29, 0.4); border: 1px solid var(--red-700);
+      margin-bottom: 14px;
+    }
+    .cta h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+    .cta p { color: var(--gray-300); font-size: 14px; max-width: 36rem; margin: 0 auto; }
+    .cta__warn {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--red-400); font-size: 13px; font-weight: 500;
+      background: rgba(69, 10, 10, 0.4); border: 1px solid rgba(153, 27, 27, 0.5);
+      padding: 8px 14px; border-radius: 8px;
+      margin: 16px auto 20px; max-width: 38rem; line-height: 1.6;
+    }
+    .cta__warn svg { flex-shrink: 0; }
+    .cta__btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 28px; border-radius: 8px;
+      background: var(--red-600); color: #fff;
+      font-size: 15px; font-weight: 600; text-decoration: none;
+      transition: background .15s ease;
+    }
+    .cta__btn:hover { background: var(--red-700); }
+
+    /* FOOTER */
+    .footer {
+      margin-top: 16px; text-align: center; color: var(--gray-500);
+      font-size: 12px; border-top: 1px solid var(--gray-800); padding: 24px 16px;
+    }
+    .footer .strong { font-weight: 600; color: var(--gray-300); }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (min-width: 640px) {
+      .hero { padding: 64px 16px; }
+      .hero h1 { font-size: 30px; }
+      .hero__sub { font-size: 16px; }
+      .main { padding: 48px 24px; }
+      .section-title { font-size: 18px; }
+      .card { padding: 24px; }
+      .card h3 { font-size: 18px; }
+    }
+    @media (min-width: 768px) {
+      .cards { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    }
+    @media (min-width: 1024px) {
+      .hero h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero__glow"></div>
+      <div class="hero__inner">
+        <!-- Replace src with your offline UCB logo (base64 data URI, e.g. data:image/png;base64,iVBOR...) -->
+        <img class="hero__logo" src="https://storage-api.dev-polygontech.xyz/wlp/awareness-page-images/3/20260621_152223_30e28511.jpg" alt="UCB" />
+        <div class="hero__badge-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <h1>আপনি একটি <span class="accent">ফিশিং লিঙ্কে</span> ক্লিক করেছেন</h1>
+        <p class="hero__sub">এটি একটি নিয়ন্ত্রিত সিমুলেশন ছিল। প্রকৃত আক্রমণ হলে আপনার লগইন তথ্য ও প্রতিষ্ঠানের ডেটা ঝুঁকির মুখে পড়তে পারত।</p>
+        <div class="hero__pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+            <path d="M12 9v4"></path><path d="M12 17h.01"></path>
+          </svg>
+          অবিলম্বে আপনার পাসওয়ার্ড পরিবর্তন করুন
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- VIDEO -->
+      <div>
+        <h2 class="section-title">দেখুন: ফিশিং কীভাবে কাজ করে</h2>
+        <div class="video-wrap">
+          <video src="/PhishingAwareness.mp4" controls preload="metadata"></video>
+        </div>
+      </div>
+
+      <!-- ACTION + RED FLAGS -->
+      <div class="cards">
+        <div class="card">
+          <h3>
+            <svg class="icon icon--green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path>
+            </svg>
+            সর্বদা
+          </h3>
+          <ol class="steps" id="steps"></ol>
+        </div>
+
+        <div class="card">
+          <h3>
+            <svg class="icon icon--red" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="m9 9 6 6"></path>
+            </svg>
+            কখনোই না
+          </h3>
+          <ul class="flags" id="flags"></ul>
+        </div>
+      </div>
+
+      <!-- COURSE CTA -->
+      <div class="cta">
+        <div class="cta__icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+          </svg>
+        </div>
+        <h2>আপনাকে একটি কোর্স অ্যাসাইন করা হয়েছে</h2>
+        <p>অনুগ্রহ করে এখনই নিচের বাটনে ক্লিক করে কোর্সটি সম্পন্ন করুন।</p>
+        <div class="cta__warn">
+          কোর্সটি সম্পন্ন করতে ব্যর্থ হলে Information Security Division (ISD) থেকে আপনার সুপারভাইজার ও সংশ্লিষ্ট টিমকে একটি ইমেইল পাঠানো হবে।
+        </div>
+        <a class="cta__btn" href="https://wlp.dev-polygontech.xyz/auth/login">
+          কোর্স শুরু করুন
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="strong">সচেতন থাকুন, নিরাপদ থাকুন এবং ব্যাংককে সুরক্ষিত করুন। আপনার সহযোগিতা ছাড়া সাইবার নিরাপত্তা অসম্পূর্ণ।</p>
+    </footer>
+  </div>
+
+  <script>
+    const RED_FLAGS = [
+      "নিশ্চিত না হয়ে কোন অপরিচিত বা সন্দেহজনক ইমেইলের প্রতিউত্তর না দেয়া।",
+      "নিশ্চিত না হয়ে কোন অপরিচিত বা সন্দেহজনক ইমেইলের সংযুক্তি ও লিঙ্ক খোলা/ক্লিক না করা।",
+      "ইমেইলে সংবেদনশীল ব্যক্তিগত তথ্য (যেমন: ব্যবহারকারীর নাম, পাসওয়ার্ড, পিন ইত্যাদি) প্রদান না করা।",
+      "কার্ডের PIN, CVV, OTP-এর তথ্য কারও সাথে শেয়ার না করা।",
+    ];
+
+    const ACTION_STEPS = [
+      "ইমেইলের প্রেরকের ঠিকানা যাচাই করুন।",
+      "হালনাগাদকৃত অ্যান্টিভাইরাস ব্যবহার করুন।",
+      "কার্ডের PIN, CVV, OTP-এর তথ্য গোপন রাখুন।",
+      "ল্যাপটপ কিংবা ব্যক্তিগত স্মার্ট-ফোনে UCB-এর ইমেইল ব্যবহারে বিশেষ সতর্কতা অবলম্বন করুন।",
+    ];
+
+    function renderStatic() {
+      document.getElementById("steps").innerHTML = ACTION_STEPS.map((step, i) =>
+        '<li><span class="num">' + (i + 1) + '</span><span class="text">' + step + '</span></li>'
+      ).join("");
+
+      document.getElementById("flags").innerHTML = RED_FLAGS.map((f, i) =>
+        '<li><span class="num">' + (i + 1) + '</span><span class="text">' + f + '</span></li>'
+      ).join("");
+    }
+
+    renderStatic();
+  </script>
+</body>
+</html>
